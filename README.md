@@ -8,7 +8,22 @@
 Widget 树 -> RenderObject 树 -> layout 计算尺寸 -> paint 画到像素缓冲区 -> 写出 PPM 图片
 ```
 
+所以，当前项目**没有调用 GPU，也没有把内容显示到真实窗口或物理屏幕**。它做的是软件渲染：在 Dart 里维护一个 RGB 像素数组，然后把这个像素数组写成 `demo.ppm` 图片文件。
+
 它的目标不是性能，也不是完整 UI 框架，而是让你能在显微镜下看清一个声明式 UI 框架最核心的骨架。
+
+## 文档索引
+
+如果你想把这个项目和真实 Flutter、常规渲染引擎联系起来看，建议按这个顺序读：
+
+| 文档 | 重点 |
+|------|------|
+| [docs/README.md](docs/README.md) | 学习路线总览 |
+| [docs/01-this-project-rendering-pipeline.md](docs/01-this-project-rendering-pipeline.md) | 本项目从 Widget 到 PPM 图片的完整链路 |
+| [docs/02-real-flutter-rendering-pipeline.md](docs/02-real-flutter-rendering-pipeline.md) | 真实 Flutter 如何从组件渲染到物理设备 |
+| [docs/03-framework-vs-engine.md](docs/03-framework-vs-engine.md) | Framework、Engine、GPU、操作系统的边界 |
+| [docs/04-common-rendering-engine.md](docs/04-common-rendering-engine.md) | 常规 2D/3D/浏览器/游戏渲染引擎的共同结构 |
+| [docs/05-learning-roadmap.md](docs/05-learning-roadmap.md) | 后续可以怎样一步步把玩具引擎变复杂 |
 
 ## 运行
 
